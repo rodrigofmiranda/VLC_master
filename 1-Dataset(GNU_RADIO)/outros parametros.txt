@@ -1,0 +1,55 @@
+Para essas aquisições foram feitos a 1m de distancia com 4 leds brancos em série, 350mA 12,3V. Ganho RRC no GNU Radio de 0.7 para todos.
+Normalização unitária de acordo com a amplitude máxima de 1. Sincronização em 10MHz.
+Configurações do Ociloscópio: setup.set
+Ponteiras TPP050B
+Amplificador V1.
++ fotos
+
+
+Descrição dos Dados I/Q para o VAE
+
+Arquivos:
+
+Dois arrays NumPy (N, 2), dtype float32, armazenados em sent_data_tuple.npy e received_data_tuple_sync-phase.npy.
+
+Cada linha representa um par de amostras complexas 𝐼,𝑄.
+
+Shape & Tipo:
+
+Shape: (900000, 2) para ambos os arquivos.
+
+Dtype: float32.
+
+Estatísticas de I/Q (Transmitido vs. Recebido):
+
+Transmitido (sent):
+
+I: μ≈0.0004, σ≈0.5771, min=−1.0000, max=+1.0000
+
+Q: μ≈0.0007, σ≈0.5769, min=−1.0000, max=+1.0000
+
+Recebido (sync-phase):
+
+I: μ≈0.0152, σ≈0.5764, min=−1.3287, max=+1.4167
+
+Q: μ≈−0.0341, σ≈0.5763, min=−1.3696, max=+1.3296
+
+Conversão para complexo: empacotamento I/Q a partir de floats intercalados.
+
+Normalização de pico: divide tudo pelo valor absoluto máximo do vetor recebido, forçando picos em ±1.
+
+Sincronismo: cross-correlation + roll para corrigir delay (ex.: delay inicial=494 amostras → corrigido a 0).
+
+Normalização de potência: multiplicação por
+`normalization_factor = sqrt(mean|tx|² / mean|rx_aligned|²)`
+para igualar potências média TX/RX (resultando em picos > ±1).
+
+Métricas de Qualidade:
+
+EVM total: 18.07 % (–14.86 dB)
+
+Noise power: 0.0217
+
+SNR: 14.86 dB
+
+Metadados Disponíveis (metadata.json)

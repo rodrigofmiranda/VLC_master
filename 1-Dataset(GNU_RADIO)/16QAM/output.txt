@@ -1,0 +1,28 @@
+=== 2025-05-14 15:47:35 |  ===
+┌────────────────┬────────────────────────────────────────┐
+│ Parâmetro     │ Valor                                    │
+├────────────────┬────────────────────────────────────────┤
+│ antenna       │ RX2
+│ arity         │ 4
+│ bandwidth     │ (samp_rate/2)
+│ clock_source  │ external
+│ duration_s    │ 5.0
+│ excess_bw     │ 0.35
+│ nfilts        │ 45
+│ phase_bw      │ 0.00628
+│ rf_gain       │ 1
+│ rrc_taps      │ firdes.root_raised_cosine(nfilts, nfilts, 1.0/float(sps)
+│ samp_rate     │ 200e3
+│ samples       │ 1000e3
+│ skip          │ 0.1
+│ sps           │ 4
+│ tuning        │ 1e6
+│ window_size   │ 0.01
+└────────────────┴────────────────────────────────────────┘
+
+Detected delay before correction: 491
+Delay after correction: 0
+EVM: 19.64%
+EVM (dB): -14.14 dB
+Noise power: 0.021429186686873436
+SNR: 14.135581970214844 dB

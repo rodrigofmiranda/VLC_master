@@ -12,3 +12,7 @@ Este repositório contém os notebooks e scripts do projeto de modelagem de cana
 1. Instale os pacotes:
    ```bash
    pip install -r requirements.txt
+   ```
+   Os scripts de geração de dados utilizam o GNU Radio e suas dependências
+   (por exemplo `PyQt5` e módulos `gnuradio`), que não estão listadas no
+   arquivo `requirements.txt`.

@@ -4,3 +4,7 @@ jupyter
 scikit-learn
 pandas
 jupytext
+tensorflow
+scipy
+packaging
+cupy
